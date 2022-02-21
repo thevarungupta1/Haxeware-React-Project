@@ -35,6 +35,16 @@ const Navbar = () => {
               Contact
             </a>
           </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+              Register
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+              Login
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
