@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
+import Endpoints from "../../api/Endpoints";
 
 const RegisterPage = () => {
   const [responseMessage, setResponseMessage] = useState({
-      message: '',
-      cssClass: ''
+    message: "",
+    cssClass: "",
   });
   const [user, setUser] = useState({
     firstName: "",
@@ -21,19 +22,20 @@ const RegisterPage = () => {
   function onSubmitHandler(event) {
     event.preventDefault();
     axios
-      .post('http://apolis-grocery.herokuapp.com/api/auth/register', user)
+      .post(Endpoints.REGISTER_URL, user)
       .then(
         (response) => {
           //setResponseMessage(response.data.message);
           setResponseMessage({
-              message: response.data.message, cssClass: 'alert-success'
-          })
+            message: response.data.message,
+            cssClass: "alert-success",
+          });
         },
         (error) => {
-          
           setResponseMessage({
-            message: 'Oops, something went wrong', cssClass: 'alert-danger'
-        })
+            message: "Oops, something went wrong",
+            cssClass: "alert-danger",
+          });
         }
       )
       .catch((error) => {
@@ -49,10 +51,11 @@ const RegisterPage = () => {
           <div className="wrapper">
             <h2>Register</h2>
             <hr />
-            
-            <div class="alert alert-danger" role="alert">
-           { responseMessage.message }
-            </div>
+            {responseMessage.message && (
+              <div className="alert alert-success" role="alert">
+                {responseMessage.message}
+              </div>
+            )}
 
             <form onSubmit={onSubmitHandler}>
               <div className="form-group">

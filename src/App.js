@@ -1,4 +1,5 @@
 import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
 import ProductPage from "./pages/ProductPage";
 import RegisterPage from "./pages/RegisterPage";
 
@@ -7,7 +8,8 @@ function App() {
    <>
     {/* <HomePage /> */}
     {/* <ProductPage /> */}
-    <RegisterPage />
+    {/* <RegisterPage /> */}
+    <LoginPage />
    </>
   );
 }
