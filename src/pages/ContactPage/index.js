@@ -6,7 +6,7 @@ const ContactPage = () => {
     <div>
     
       <div className="jumbatron text-center">
-        <h1 className="display-4">Contact Us Us</h1>
+        <h1 className="display-4">Contact Us</h1>
         <p className="lead">This is some test from the contact us page</p>
       </div>
       <div className="container">

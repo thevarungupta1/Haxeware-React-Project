@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from 'react-router-dom';
 
 const SubCategoryList = () => {
-  let catId = 3;
+  let { id } = useParams();
   const [subcategories, setSubCategories] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://apolis-grocery.herokuapp.com/api/subcategory/${catId}`)
+      .get(`http://apolis-grocery.herokuapp.com/api/subcategory/${id}`)
       .then((response) => {
         console.log(response.data);
         setSubCategories(response.data.data);

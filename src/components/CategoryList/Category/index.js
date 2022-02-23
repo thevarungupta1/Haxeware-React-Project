@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Category = (props) => {
     const {catId, catName, catImage}  = props.data;
@@ -9,9 +10,9 @@ const Category = (props) => {
         <div className="card-body">
           <h5 className="card-title">{ catName }</h5>
           
-          <a href="#" className="btn btn-primary btn-block">
-            Start Shopping
-          </a>
+          <Link to={ 'products/'+ catId} className="btn btn-primary btn-block">
+            Select
+          </Link>
         </div>
       </div>
     </div>
